@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+   <!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>L'OR NOIR — Ayollar Parfyumeriyasi</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Yuqori aksiya paneli -->
+  <div class="top-banner">
+    Ayollar kolleksiyasi • 500 000 so'mdan yuqori xaridlarga bepul yetkazib berish
+  </div>
+
+  <!-- Navigatsiya (7 xil menyu bo'limi) -->
+  <header class="navbar">
+    <div class="container nav-top">
+      <a href="#" class="logo" onclick="filterCategory('all')">L'OR <span>NOIR</span></a>
+
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Ayollar atiri nomi yoki brendni qidiring..." oninput="handleSearch()" />
+      </div>
+
+      <div class="nav-actions">
+        <button class="icon-btn" onclick="openCart()">
+          Savat <span id="cartCount" class="badge">0</span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="nav-links container">
+      <button class="nav-item active" onclick="filterCategory('all', this)">Barcha ayollar atirlari (36)</button>
+      <button class="nav-item" onclick="filterCategory('floral', this)">Gulli iforlar</button>
+      <button class="nav-item" onclick="filterCategory('sweet', this)">Shirin va Vanilli</button>
+      <button class="nav-item" onclick="filterCategory('niche', this)">Niša parfyumeriya</button>
+      <button class="nav-item" onclick="filterCategory('new', this)">Yangi kelganlar</button>
+      <button class="nav-item" onclick="filterCategory('sale', this)">Aksiyalar</button>
+      <button class="nav-item" onclick="scrollToFooter()">Aloqa</button>
+    </nav>
+  </header>
+
+  <!-- Asosiy banner -->
+  <section class="hero">
+    <div class="container hero-content">
+      <span class="subtitle">AYOLLAR UCHUN EKSKLYUZIV KOLLEKSIYA</span>
+      <h1>Nafislik va joziba uyg'unligidagi ayollar iforlari</h1>
+      <p>36 xil sara ayollar parfyumlari — har biri o'ziga xos flakon, haqiqiy fotosurat va original tarkibda.</p>
+      <div class="hero-btns">
+        <button class="btn-gold" onclick="filterCategory('all')">Kolleksiyani ko'rish</button>
+        <button class="btn-outline" onclick="filterCategory('niche')">Niša kolleksiya</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Katalog bo'limi -->
+  <main class="container catalog-section">
+    <div class="catalog-header">
+      <div>
+        <h2 id="sectionTitle">Barcha Ayollar Atirlari (36 xil)</h2>
+        <p id="productCountText">Ko'rsatilmoqda: 36 ta parfyum</p>
+      </div>
+      <select id="sortSelect" onchange="renderProducts()">
+        <option value="default">Saralash: Standart</option>
+        <option value="price-asc">Narx: Arzondan qimmatga</option>
+        <option value="price-desc">Narx: Qimmatdan arzonga</option>
+      </select>
+    </div>
+
+    <!-- Mahsulotlar panjarasi -->
+    <div id="productsGrid" class="products-grid"></div>
+  </main>
+
+  <!-- Savatcha modali -->
+  <div id="cartModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Xarid savatingiz</h3>
+        <button class="close-btn" onclick="closeCart()">&times;</button>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-footer">
+        <div class="total-row">
+          <span>Jami summa:</span>
+          <strong id="cartTotal">0 so'm</strong>
+        </div>
+        <button class="btn-gold full-width" onclick="checkoutOrder()">Buyurtmani rasmiylashtirish</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mahsulot haqida batafsil modal -->
+  <div id="detailModal" class="modal">
+    <div class="modal-content detail-box">
+      <button class="close-btn detail-close" onclick="closeDetail()">&times;</button>
+      <div id="detailBody"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer" class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3 class="logo">L'OR <span>NOIR</span></h3>
+        <p>Ayollar uchun 100% original parfyumeriya do'koni. Toshkent bo'ylab tezkor yetkazib berish.</p>
+      </div>
+      <div>
+        <h4>Aloqa</h4>
+        <p>Tel: +998 90 123 45 67</p>
+        <p>Manzil: Toshkent sh., Amir Temur ko'chasi, 15</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+    <script src="./index.js"></script>
+</body>
+</html>
